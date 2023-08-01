@@ -20,7 +20,6 @@ class Person
   end
 end
 
-
 person = Person.new(13, 'ibrahim')
 person.name = 'ibu'
 print person.name
