@@ -1,32 +1,6 @@
-class Nameable
-  def correct_name
-    raise NotImplementedError, 'The correct name has not been implemented yet'
-  end
-end
-
-class BaseDecorator < Nameable
-  def initialize(name_able)
-    super()
-    @name_able = name_able
-  end
-
-  def correct_name
-    @name_able.correct_name
-  end
-end
-
-class CapitalizeDecorator < BaseDecorator
-  def correct_name
-    @name_able.correct_name.capitalize
-  end
-end
-
-class TrimmerDecorator < BaseDecorator
-  def correct_name
-    name = @name_able.correct_name
-    name.length > 10 ? name[0..9] : name
-  end
-end
+require './name_able'
+require './capatalized_decorator'
+require './trimmer_decorator'
 
 class Person < Nameable
   attr_reader :id
@@ -56,7 +30,7 @@ class Person < Nameable
 end
 
 person = Person.new(22, 'maximilianus')
-person.correct_name
+puts person.correct_name
 capitalized_person = CapitalizeDecorator.new(person)
 puts capitalized_person.correct_name
 capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
