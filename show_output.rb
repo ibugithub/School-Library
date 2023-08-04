@@ -6,6 +6,7 @@ require './trimmer_decorator'
 require './rental_class'
 require './book_class'
 
+# Create Association
 neuro_science = Classroom.new('NeuroScience')
 Student.new(12, neuro_science, 'ibu')
 Student.new(12, neuro_science, 'nibu')
@@ -29,3 +30,9 @@ Rental.new('2022-8-19', book_hate, person_nibu)
 book_love.rentals.map { |rent| puts rent.person.name }
 person_ibu.rentals.map { |rent| puts rent.book.title }
 person_nibu.rentals.map { |rent| puts rent.book.title }
+
+
+# Create basicUi
+class_room = Classroom.new('Planetary101')
+student = Student.new(12, class_room, 'ibu')
+puts student.name

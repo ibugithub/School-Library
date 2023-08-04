@@ -4,7 +4,7 @@ require './trimmer_decorator'
 
 class Person < Nameable
   attr_reader :id
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rentals, :identity
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     super()
@@ -13,6 +13,7 @@ class Person < Nameable
     @age = age
     @parent_permission = parent_permission
     @rentals = []
+    @identity = ''
   end
 
   def can_use_services
