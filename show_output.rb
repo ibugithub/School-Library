@@ -31,7 +31,6 @@ book_love.rentals.map { |rent| puts rent.person.name }
 person_ibu.rentals.map { |rent| puts rent.book.title }
 person_nibu.rentals.map { |rent| puts rent.book.title }
 
-
 # Create basicUi
 class_room = Classroom.new('Planetary101')
 student = Student.new(12, class_room, 'ibu')
