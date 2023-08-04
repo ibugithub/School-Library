@@ -1,0 +1,103 @@
+
+
+#!/usr/bin/env ruby
+require './app'
+@app = App.new
+
+def create_student
+  print 'Age: '
+  age = gets.chomp
+  print 'Name: '
+  name = gets.chomp
+  print 'Has Parent permissions? [Y/N]: '
+  permissions = gets.chomp.downcase
+  if permissions == 'y'
+    permission = true
+  elsif permissions == 'n'
+    permission = false
+  else
+    puts 'invalid input'
+  end
+  @app.create_student(age, name, permission)
+end
+
+def create_teacher
+  print 'Age: '
+  age = gets.chomp
+  print 'Name: '
+  name = gets.chomp
+  print 'Specialization: '
+  spec = gets.chomp
+  @app.create_teacher(age, name, spec)
+end
+
+def create_book
+  print 'Title: '
+  title = gets.chomp
+  print 'Author: '
+  author = gets.chomp
+  @app.create_book(title, author)
+end
+
+def create_rental
+  puts 'Select the a book from the following list by a number: '
+  @app.show_book(show_index: true)
+  book_index = gets.to_i
+
+  puts 'Select the a person from the following list by a number: '
+  @app.show_people(show_index: true)
+  person_index = gets.to_i
+
+  print 'Date: '
+  date = gets.chomp
+  @app.create_rental(person_index, book_index, date)
+end
+
+def main
+  @app.intro
+  input = gets.chomp
+
+  case input
+  when '1'
+    @app.show_book
+    main
+
+  when '2'
+    @app.show_people
+    main
+
+  when '3'
+    puts 'Do you want to create a student (1) or a teacher (2)? [input the number]:'
+    input = gets.chomp
+    if input == '1'
+      create_student
+      main
+    elsif input == '2'
+      create_teacher
+      main
+    else
+      puts 'Invalid input'
+    end
+
+  when '4'
+    create_book
+    main
+
+  when '5'
+    create_rental
+    main
+
+  when '6'
+    @app.show_rental
+    main
+
+  when '7'
+    exit
+
+  else
+    puts 'Invalid input'
+    main
+  end
+end
+
+main
