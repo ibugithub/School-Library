@@ -50,7 +50,7 @@ def create_rental
 
   print 'Date: '
   date = gets.chomp
-  @app.create_rental(person_index, book_index, date)
+  @app.create_rental(book_index, person_index, date)
 end
 
 def main
