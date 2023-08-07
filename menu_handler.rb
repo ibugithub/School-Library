@@ -112,7 +112,6 @@ class MenuHandler
 
     book_index = gets.to_i
 
-
     puts 'Select the a person from the following list by a number: '
     people = @app.show_people(show_index: true)
     return if people.empty?
