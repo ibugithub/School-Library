@@ -25,7 +25,7 @@ class App
     end
 
     # returns @people to validate if it is empty or not
-    @people 
+    @people
   end
 
   def show_book(show_index: false)
@@ -72,7 +72,7 @@ class App
     end
     rental = Rental.new(date, book, person)
     @rentals << rental
-    puts "Rental has been created successfully"
+    puts 'Rental has been created successfully'
   end
 
   def show_rental

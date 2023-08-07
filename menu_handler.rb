@@ -1,5 +1,9 @@
+# menu_handler.rb
+
 require './app'
 
+# This class responsible for the user interface (menu) and for
+# calling the methods of the App class.
 class MenuHandler
   def initialize
     @app = App.new
@@ -13,11 +17,11 @@ class MenuHandler
       system('clear')
     end
   end
-  
+
   def welcome_message
     puts "\n\n* * * * WELCOME TO SCHOOL LIBRARY * * * *\n\n"
   end
-  
+
   def pause
     puts "\nPress enter to continue"
     gets
@@ -41,7 +45,7 @@ class MenuHandler
     print 'Please enter a number: '
     gets.chomp
   end
-    
+
   def show_book
     @app.show_book
   end
@@ -80,7 +84,7 @@ class MenuHandler
     @app.create_student(age, name, permission)
     puts "Student #{name} has been created successfully"
   end
-  
+
   def create_teacher
     print 'Age: '
     age = gets.chomp
@@ -91,7 +95,7 @@ class MenuHandler
     @app.create_teacher(age, name, spec)
     puts "Teacher #{name} has been created successfully"
   end
-  
+
   def create_book
     print 'Title: '
     title = gets.chomp
@@ -99,21 +103,22 @@ class MenuHandler
     author = gets.chomp
     @app.create_book(title, author)
     puts "Book #{title} has been created successfully"
-
   end
-  
+
   def create_rental
     puts 'Select the a book from the following list by a number: '
     books = @app.show_book(show_index: true)
     return if books.empty?
+
     book_index = gets.to_i
 
-  
+
     puts 'Select the a person from the following list by a number: '
     people = @app.show_people(show_index: true)
     return if people.empty?
+
     person_index = gets.to_i
-  
+
     print 'Date: '
     date = gets.chomp
     @app.create_rental(person_index, book_index, date)
