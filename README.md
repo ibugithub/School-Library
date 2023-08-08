@@ -97,6 +97,14 @@ To run the project:
 - Twitter: [@twitterhandle](https://twitter.com/mdibrahimibuu)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/ibuu)
 
+## 👥 Authors <a name="authors"></a>
+👤 **JIC Software (Jorge Camargo)**
+- GitHub: [@jicamargo](https://github.com/jicamargo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jorgecamargog/?locale=en_US)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

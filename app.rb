@@ -3,21 +3,12 @@ require './student_class'
 require './teacher_class'
 require './book_class'
 require './rental_class'
+
 class App
   def initialize
     @people = []
     @books = []
     @rentals = []
-  end
-
-  def intro
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rentals for a given person id'
-    puts '7 - Exit'
   end
 
   def show_people(show_index: false)
@@ -32,7 +23,9 @@ class App
         puts "[#{person.identity}]: #{person.name}. Age: #{person.age}  Id: #{person.id}"
       end
     end
-    puts
+
+    # returns @people to validate if it is empty or not
+    @people
   end
 
   def show_book(show_index: false)
@@ -47,47 +40,46 @@ class App
         puts "[Book] Title: #{book.title}. Author: #{book.author}"
       end
     end
-    puts
+
+    # returns @books to validate if it is empty or not
+    @books
   end
 
   def create_student(age, name, permission)
     class_room = Classroom.new('Planetary101')
-    student = Student.new(age, class_room, name, permission)
+    student = Student.new(age, class_room, permission, name)
     student.identity = 'Student'
     @people << student
-    print 'Student ', student.name, ' has been created successfully'
-    puts
   end
 
   def create_teacher(age, name, spec)
     teacher = Teacher.new(age, spec, name)
-    puts 'teacher ', teacher.name, ' has been created successfully'
     teacher.identity = 'Teacher'
     @people << teacher
-    puts
   end
 
   def create_book(title, author)
     book = Book.new(title, author)
-    print 'Book ', book.title, ' has been created successfully'
     @books << book
-    puts
   end
 
   def create_rental(person_index, book_index, date)
     person = @people[person_index]
     book = @books[book_index]
+    if person.nil? || book.nil?
+      puts 'Invalid book or person'
+      return
+    end
     rental = Rental.new(date, book, person)
-    print 'Rental has been created successfully'
     @rentals << rental
-    puts
+    puts 'Rental has been created successfully'
   end
 
   def show_rental
     if @rentals.empty?
       puts 'There are no rentals'
     else
-      puts 'Id of the person: '
+      print 'Id of the person: '
       person_id = gets.chomp.to_i
       found_rental = @rentals.select { |rental| rental.person.id == person_id }
       if found_rental
@@ -99,6 +91,5 @@ class App
         puts 'No matched rentals found by the Id'
       end
     end
-    puts
   end
 end
