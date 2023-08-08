@@ -124,5 +124,4 @@ class MenuHandler
   def show_rental
     @app.show_rental
   end
-
 end
