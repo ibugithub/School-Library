@@ -125,7 +125,4 @@ class MenuHandler
     @app.show_rental
   end
 
-  def save_data
-    @app.save_data
-  end
 end
