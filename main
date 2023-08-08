@@ -23,6 +23,7 @@ def main
     when '6'
       menu_handler.show_rental
     when '7'
+      menu_handler.save_data
       break
     else
       puts 'Invalid input'
