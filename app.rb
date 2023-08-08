@@ -65,7 +65,6 @@ class App
       return
     end
     rental = Rental.new(date, book, person)
-    # p 'the saved rentals are ', rental
     save_to_rentals(rental)
     puts 'Rental has been created successfully'
   end
