@@ -1,7 +1,4 @@
-# menu_handler.rb
-
 require './app'
-
 # This class responsible for the user interface (menu) and for
 # calling the methods of the App class.
 class MenuHandler
