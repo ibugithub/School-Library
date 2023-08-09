@@ -1,5 +1,5 @@
 require './name_able'
-require './capatalized_decorator'
+require './capitalized_decorator'
 require './trimmer_decorator'
 
 class Person < Nameable
