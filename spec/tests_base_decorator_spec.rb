@@ -1,4 +1,4 @@
-require '.\base_decorator'
+require './base_decorator'
 
 describe BaseDecorator do
   # Arrange: Set up a common object for the tests (mocking Nameable)

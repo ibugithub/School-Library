@@ -1,4 +1,4 @@
-require '.\trimmer_decorator'
+require './trimmer_decorator'
 
 describe TrimmerDecorator do
   # Arrange: Set up a common object for the tests (mocking BaseDecorator)

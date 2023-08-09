@@ -1,4 +1,4 @@
-require '.\rental_class'
+require './rental_class'
 
 describe Rental do
   # Arrange: Set up common variables for the tests

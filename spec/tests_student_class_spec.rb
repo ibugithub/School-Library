@@ -1,4 +1,4 @@
-require '.\student_class'
+require './student_class'
 
 describe Student do
   # Arrange: Set up common variables for the tests

@@ -1,4 +1,4 @@
-require '.\capitalized_decorator'
+require './capitalized_decorator'
 
 describe CapitalizeDecorator do
   # Arrange: Set up a common object for the tests (mocking BaseDecorator)

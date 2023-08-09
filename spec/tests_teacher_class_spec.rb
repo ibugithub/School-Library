@@ -1,4 +1,4 @@
-require '.\teacher_class'
+require './teacher_class'
 
 describe Teacher do
   # Arrange: Set up common variables for the tests

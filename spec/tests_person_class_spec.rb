@@ -1,4 +1,4 @@
-require '.\person_class'
+require './person_class'
 
 describe Person do
   # Arrange: Set up a common instance of Person for the tests
