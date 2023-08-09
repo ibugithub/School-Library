@@ -27,12 +27,12 @@ describe Student do
       new_classroom = instance_double('Classroom', students: [])
       allow(old_classroom).to receive(:add_student)
       allow(new_classroom).to receive(:add_student)
-      
+
       student = Student.new(age, old_classroom, permission, student_name)
-      
+
       # Act: Update student's classroom
       student.classroom = new_classroom
-      
+
       # Assert: Verify the new classroom is set and students are updated
       expect(student.classroom).to eq(new_classroom)
       expect(new_classroom.students).to include(student)

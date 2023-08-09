@@ -1,5 +1,5 @@
-require './class_room'  
-require './student_class' 
+require './class_room'
+require './student_class'
 
 describe Classroom do
   # arrange

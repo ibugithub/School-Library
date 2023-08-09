@@ -11,10 +11,10 @@ describe Rental do
       # Arrange: Set up book and person doubles and expected behavior
       allow(book).to receive(:add_rental)
       allow(person).to receive(:add_rental)
-      
+
       # Act: Create a rental instance
       rental = Rental.new(date, book, person)
-      
+
       # Assert: Verify attributes are set and add_rental methods were called
       expect(rental.date).to eq(date)
       expect(rental.book).to eq(book)
